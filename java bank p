@@ -1,0 +1,87 @@
+package bankprgm;
+
+import java.util.Scanner;
+
+class customer {
+	 
+	private double bal=5000;
+	private int pwd;
+	
+	public void deposite()
+	{
+		System.out.println("enter password");
+		Scanner sc=new Scanner (System.in);
+		
+		pwd=sc.nextInt();
+		if(pwd==123)
+		{
+			System.out.println("enter ammount to be deposite");
+			int d =sc.nextInt();
+			bal=bal+d;
+			
+			System.out.println("deposite money"+d);
+			System.out.println("Total Balance"+bal);
+		}
+		else
+			System.out.println("please input correct password");
+	}
+		public void withdraw()
+		{
+			System.out.println("enter password");
+			Scanner sc =new Scanner(System.in);
+			pwd=sc.nextInt();
+			if(pwd==123)
+			{
+				Scanner ee =new Scanner(System.in);
+				System.out.println("enter ammount to be withdraw");
+				int w=ee.nextInt();
+				bal=bal-w;
+				System.out.println("withdraw money"+w);
+				System.out.println("total balance"+bal);
+			}
+			else
+				System.out.println("incorrect password");
+			
+		}
+		public void checkbal()
+		{
+			System.out.println("enter password");
+			Scanner sc =new Scanner(System.in);
+			pwd=sc.nextInt();
+			if(pwd==123)
+			{
+				System.out.println("total balance"+bal);
+			}
+			else
+				System.out.println("incorrect password");
+			
+		}
+}
+
+ class BankDemo{
+	
+	public static void main(String []args) {
+		
+		customer c=new customer();
+		int ch;
+		System.out.println("1.Deposite");
+		System.out.println("2. withdraw");
+		System.out.println("3.checkBalance");
+		
+		System.out.println("\nenter your choice:");
+		Scanner sc=new Scanner(System.in);
+		ch=sc.nextInt();
+		
+		switch(ch) {
+		case 1:c.deposite();
+		break;
+		case 2:c.withdraw();
+		break;
+		case 3:c.checkbal();
+		break;
+		default :System.out.println("input correct choice");
+		}
+	}
+
+}
+
